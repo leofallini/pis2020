@@ -26,4 +26,14 @@ const refreshToken = () => makeRequest(REQUEST_TYPES.GET_REFRESH_TOKEN);
 
 const getUserInfo = () => makeRequest(REQUEST_TYPES.GET_USER_INFO);
 
-export { initialize, login, logout, getToken, getUserInfo, refreshToken };
+const validateToken = () => makeRequest(REQUEST_TYPES.VALIDATE_TOKEN);
+
+export {
+  initialize,
+  login,
+  logout,
+  getToken,
+  getUserInfo,
+  refreshToken,
+  validateToken,
+};
