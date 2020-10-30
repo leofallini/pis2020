@@ -18,4 +18,13 @@ const logoutEndpoint = () => {
 const validateTokenEndpoint =
   'https://auth-testing.iduruguay.gub.uy/oidc/v1/jwks';
 
-export { loginEndpoint, userInfoEndpoint, tokenEndpoint, logoutEndpoint, validateTokenEndpoint };
+const issuer = 'https://auth-testing.iduruguay.gub.uy/oidc/v1';
+
+export {
+  loginEndpoint,
+  userInfoEndpoint,
+  tokenEndpoint,
+  logoutEndpoint,
+  validateTokenEndpoint,
+  issuer,
+};

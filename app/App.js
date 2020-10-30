@@ -18,6 +18,7 @@ import {
   refreshToken,
   logout,
   setParameters,
+  validateToken,
 } from 'sdk-gubuy-test';
 
 import LoginButton from './LoginButton';
@@ -231,6 +232,7 @@ const App = () => {
                     style={[styles.infoBtn]}
                     onPress={async () => {
                       setToken(await getToken());
+                      console.log(validateToken());
                     }}
                   >
                     <Text style={styles.infoBtnText}>GET TOKEN</Text>
@@ -258,6 +260,7 @@ const App = () => {
                         }}
                         onPress={async () => {
                           setToken(await refreshToken());
+                          validateToken();
                         }}
                       >
                         <Image
