@@ -1,23 +1,29 @@
-import { fetch } from 'react-native-ssl-pinning';
+// import { fetch } from 'react-native-ssl-pinning';
 import { Platform } from 'react-native';
 import { userInfoEndpoint } from '../utils/endpoints';
 import { getParameters } from '../configuration';
+import fetchWrapper from '../utils/fetchRetry';
 
 const getUserInfo = async () => {
-  const { accessToken } = getParameters();
+  let { accessToken } = getParameters();
   try {
-    const response = await fetch(userInfoEndpoint, {
-      method: 'GET',
-      pkPinning: Platform.OS === 'ios',
-      sslPinning: {
-        certs: ['certificate'],
+    const response = await fetchWrapper(
+      userInfoEndpoint,
+      {
+        method: 'GET',
+        timeoutInterval: 10000,
+        pkPinning: Platform.OS === 'ios',
+        sslPinning: {
+          certs: ['certificate'],
+        },
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+          Accept: 'application/json',
+        },
       },
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
-        Accept: 'application/json',
-      },
-    });
+      5,
+    );
     const { status } = response;
     const responseJson = await response.json();
 
