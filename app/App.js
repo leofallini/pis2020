@@ -260,7 +260,7 @@ const App = () => {
                         }}
                         onPress={async () => {
                           setToken(await refreshToken());
-                          validateToken();
+                          console.log(validateToken());
                         }}
                       >
                         <Image
