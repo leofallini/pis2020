@@ -13,12 +13,12 @@ import { getParameters, setParameters, resetParameters } from './configuration';
 export {
   initialize,
   login,
-  getToken,
-  getUserInfo,
+  logout,
   getParameters,
   setParameters,
+  getToken,
+  getUserInfo,
   refreshToken,
-  logout,
   resetParameters,
   validateToken,
 };
