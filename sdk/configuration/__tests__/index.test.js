@@ -28,7 +28,7 @@ describe('configuration module', () => {
     };
     const parameters3 = {
       clientId: 'clientId',
-      code: 'code',
+      code: 'Code',
     };
     const parameters4 = {
       clientId: 'clientId2',
@@ -38,11 +38,11 @@ describe('configuration module', () => {
       accessToken: 'accessToken',
       refreshToken: 'refreshToken',
       tokenType: 'tokenType',
-      expiresIn: 'expiresIn',
+      expiresIn: 123,
       idToken: 'idToken',
     };
     const parameters6 = {
-      scope: 'scope',
+      scope: 'Scope',
     };
     const parameters = getParameters();
     expect(parameters).toStrictEqual(parameters1);
@@ -66,7 +66,7 @@ describe('configuration module', () => {
       redirectUri: 'redirectUri',
       clientId: 'clientId',
       clientSecret: 'clientSecret',
-      code: 'code',
+      code: 'Code',
       accessToken: '',
       refreshToken: '',
       tokenType: '',
@@ -81,7 +81,7 @@ describe('configuration module', () => {
       redirectUri: 'redirectUri',
       clientId: 'clientId2',
       clientSecret: 'clientSecret',
-      code: 'code',
+      code: 'Code',
       accessToken: '',
       refreshToken: '',
       tokenType: '',
@@ -96,11 +96,11 @@ describe('configuration module', () => {
       redirectUri: 'redirectUri',
       clientId: 'clientId2',
       clientSecret: 'clientSecret',
-      code: 'code',
+      code: 'Code',
       accessToken: 'accessToken',
       refreshToken: 'refreshToken',
       tokenType: 'tokenType',
-      expiresIn: 'expiresIn',
+      expiresIn: 123,
       idToken: 'idToken',
       postLogoutRedirectUri: 'postLogoutRedirectUri',
       state: '',
@@ -111,15 +111,15 @@ describe('configuration module', () => {
       redirectUri: 'redirectUri',
       clientId: 'clientId2',
       clientSecret: 'clientSecret',
-      code: 'code',
+      code: 'Code',
       accessToken: 'accessToken',
       refreshToken: 'refreshToken',
       tokenType: 'tokenType',
-      expiresIn: 'expiresIn',
+      expiresIn: 123,
       idToken: 'idToken',
       postLogoutRedirectUri: 'postLogoutRedirectUri',
       state: '',
-      scope: 'scope',
+      scope: 'Scope',
     });
     clearParameters();
     expect(getParameters()).toStrictEqual({
